@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stepwise"
+version = "0.1.0"
+description = "Preprocessing and analysis for London's walkability and cardiometabolic morbidity study"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy==2.2.6",
+    "pandas==2.3.1",
+    "scipy==1.15.3",
+    "statsmodels==0.14.4",
+    "scikit-learn==1.6.1",
+    "geopandas==1.1.0",
+    "fiona",
+    "pyarrow==23.0.0",
+    "pyproj==3.7.1",
+    "shapely==2.1.1",
+    "matplotlib==3.10.3",
+    "seaborn==0.13.2",
+    "libpysal==4.13.0",
+    "esda==2.7.0",
+    "spreg==1.8.3",
+    "osmnx",
+    "networkx",
+    "geopy",
+    "rasterio",
+    "python-igraph",
+    "plotly",
+    "branca",
+    "folium",
+    "mapclassify",
+    "dash",
+    "dash-bootstrap-components",
+    "dash-bootstrap-templates",
+    "dash-extensions",
+    "dash-leaflet",
+    "tqdm",
+    "ipython",
+    "ipywidgets",
+    "ipykernel==6.29.5",
+    "nbformat==5.10.4",
+    "nbclient==0.10.2",
+    "requests",
+    "beautifulsoup4",
+    "lxml",
+    "openai",
+    "gunicorn",
+    "google-cloud-storage",
+    "jupyterlab",
+    "dagster==1.13.25",
+    "dagster-webserver==1.13.25",
+]
+
+[project.optional-dependencies]
+notebooks = ["jupyterlab", "ipykernel==6.29.5", "nbformat==5.10.4", "nbclient==0.10.2"]
+workflow = ["dagster==1.13.25", "dagster-webserver==1.13.25", "nbformat==5.10.4", "nbclient==0.10.2", "ipykernel==6.29.5"]
+dev = ["pytest", "ruff", "nbformat", "nbclient", "ipykernel"]
+
+[tool.setuptools]
+packages = ["analysis.src", "preprocessing.src"]
+py-modules = ["paths"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "single"
