@@ -13,12 +13,15 @@ __pycache__/
 !.env.example
 .DS_Store
 
-/data/**
-!/data/**/
-!/data/**/.gitkeep
-/results/
-/lib/
 /artifacts/**
+/data/
+/lib/*
+/results/*
+
+!/artifacts/.gitkeep
+!/data/.gitkeep
+!/lib/.gitkeep
+!/results/.gitkeep
 
 # Include the amenity mapping and transport frequencies
 !/artifacts/preprocessing/
